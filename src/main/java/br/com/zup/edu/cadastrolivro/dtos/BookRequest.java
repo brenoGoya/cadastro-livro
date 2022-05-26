@@ -7,6 +7,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class BookRequest {
@@ -18,7 +19,7 @@ public class BookRequest {
     private String description;
 
     @NotNull @Past
-    private Date publicationDate;
+    private LocalDate publicationDate;
 
     @ISBN
     private String isbn;
@@ -27,7 +28,7 @@ public class BookRequest {
     public BookRequest() {
     }
 
-    public BookRequest(String title, String description, Date publicationDate, String isbn) {
+    public BookRequest(String title, String description, LocalDate publicationDate, String isbn) {
         this.title = title;
         this.description = description;
         this.publicationDate = publicationDate;
@@ -42,7 +43,7 @@ public class BookRequest {
         return description;
     }
 
-    public Date getPublicationDate() {
+    public LocalDate getPublicationDate() {
         return publicationDate;
     }
 

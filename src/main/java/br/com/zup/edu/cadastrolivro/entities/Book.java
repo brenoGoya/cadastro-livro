@@ -1,6 +1,7 @@
 package br.com.zup.edu.cadastrolivro.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -18,7 +19,7 @@ public class Book {
     private String description;
 
     @Column(nullable = false)
-    private Date publicationDate;
+    private LocalDate publicationDate;
 
     private String isbn;
 
@@ -26,7 +27,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String description, Date publicationDate, String isbn) {
+    public Book(String title, String description, LocalDate publicationDate, String isbn) {
         this.title = title;
         this.description = description;
         this.publicationDate = publicationDate;
