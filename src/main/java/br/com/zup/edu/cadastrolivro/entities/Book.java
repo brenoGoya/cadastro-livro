@@ -1,8 +1,10 @@
 package br.com.zup.edu.cadastrolivro.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.LocalDate;
-import java.util.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
 

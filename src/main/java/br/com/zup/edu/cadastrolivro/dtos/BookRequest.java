@@ -1,6 +1,7 @@
 package br.com.zup.edu.cadastrolivro.dtos;
 
 import br.com.zup.edu.cadastrolivro.entities.Book;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.validator.constraints.ISBN;
 
 import javax.validation.constraints.NotBlank;
@@ -8,7 +9,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
-import java.util.Date;
+
+import static org.hibernate.validator.constraints.ISBN.Type;
 
 public class BookRequest {
 
@@ -18,10 +20,10 @@ public class BookRequest {
     @NotBlank @Size(max = 4000)
     private String description;
 
-    @NotNull @Past
+    @NotNull @Past @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate publicationDate;
 
-    @ISBN
+    @ISBN(type = Type.ANY)
     private String isbn;
 
     @Deprecated
